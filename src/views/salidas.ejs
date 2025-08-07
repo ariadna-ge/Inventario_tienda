@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Salidas de Mercancia</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span>Salidas de Mercancia</span>
+        </h1>
+        <div class="decoracion"></div>
+        <a href="/" id="menu"><img src="/img/menu.png" alt="Menu principal"></a>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <a href="/agregarSalida" id="boton">Agregar producto</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Sku</th>
+                        <th>Fecha de salida</th>
+                        <th>Metodo de pago</th>
+                        <th>Cantidad vendida</th>
+                        <th>Precio de venta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (salidas && salidas.length> 0) { %>
+                        <% salidas.forEach(p=> { %>
+                            <tr>
+                                <td>
+                                    <%= p.id_salida %>
+                                </td>
+                                <td>
+                                    <%= p.sku %>
+                                </td>
+                                <td>
+                                    <%= p.fecha_salida %>
+                                </td>
+                                <td>
+                                    <%= p.pago %>
+                                </td>
+                                <td>
+                                    <%= p.cantidad %>
+                                </td>
+                                <td>
+                                   $ <%= p.precio_total %>
+                                </td>
+                                <!-- Eliminacion de acciones, para no editar ni eliminar registros transaccionales  -->
+                            </tr>
+                            <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="9">No hay productos para mostrar.</td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        @2025 ariadna-ge. Todos los derechos reservados
+    </footer>
+</body>
+
+</html>

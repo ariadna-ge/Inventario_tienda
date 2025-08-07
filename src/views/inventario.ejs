@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Inventario General</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span>Inventario general</span>
+        </h1>
+        <div class="decoracion"></div>
+        <a href="/" id="menu"><img src="/img/menu.png" alt="Menu principal"></a>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <a href="/agregar" id="boton">Agregar producto</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Producto</th>
+                        <th>Descripción</th>
+                        <th>Sku</th>
+                        <th>Talla</th>
+                        <th>Cantidad</th>
+                        <th>Precio de compra</th>
+                        <th>Precio de venta</th>
+                        <th>Categoria</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% if (productos && productos.length> 0) { %>
+                        <% productos.forEach(p=> { %>
+                            <tr>
+                                <td>
+                                    <%= p.id_producto %>
+                                </td>
+                                <td>
+                                    <%= p.producto %>
+                                </td>
+                                <td>
+                                    <%= p.descripcion %>
+                                </td>
+                                <td>
+                                    <%= p.sku %>
+                                </td>
+                                <td>
+                                    <%= p.talla %>
+                                </td>
+                                <td>
+                                    <%= p.cantidad %>
+                                </td>
+                                <td>
+                                    $<%= p.precio_compra %>
+                                </td>
+                                <td>
+                                    $<%= p.precio_venta %>
+                                </td>
+                                <td>
+                                    <%= p.categoria %>
+                                </td>
+                                <td>
+                                    <% if (p.activo===1) { %>
+                                        Activo
+                                        <% } else { %>
+                                            Desactivado
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <a href="/productos/editar/<%= p.id_producto %>"><img src="/img/editar.png" alt="Editar"
+                                            id="icon"></a>
+                                    <!-- Para mantener un registro de entradas salidas e inventario se opto que la forma correcta es marcar el producto como inactivo en lugar de eliminarlo de la base de datos. -->
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="9">No hay productos para mostrar.</td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        @2025 ariadna-ge. Todos los derechos reservados
+    </footer>
+</body>
+
+</html>

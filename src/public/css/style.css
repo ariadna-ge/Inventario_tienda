@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --rosa-apagado: #765d67;
+    --magenta-oscuro: #4b2138;
+    --magenta-claro: #6d3c52;
+    --rosa-neon: #2d222f;
+    --naranja-claro: #fadcd5;
+    --negro: #000;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--naranja-claro);
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    color: var(--blanco);
+    text-transform: uppercase;
+    display: flex;
+}
+
+h1 {
+    background-color: var(--rosa-apagado);
+    font-size: xx-large;
+    width: 70%;
+    height: 100px;
+    align-content: center;
+}
+
+span {
+    margin-left: 40px;
+    background-color: var(--rosa-apagado);
+    color: var(--negro);
+}
+
+.decoracion {
+    background-color: var(--magenta-oscuro);
+    width: 250px;
+    height: 60px;
+    margin: 20px 0px 0px -40px;
+}
+
+#menu {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    align-content: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.contenedor {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#boton {
+    background-color: var(--rosa-neon);
+    color: var(--blanco);
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    float: right;
+}
+
+#boton:hover {
+    background-color: var(--rosa-apagado);
+    color: var(--negro);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--negro);
+    table-layout: auto;
+}
+
+th {
+    background-color: var(--magenta-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid var(--negro);
+}
+
+td {
+    padding: 12px 15px;
+    border: 1px solid var(--negro);
+    color: var(--negro);
+    background-color: var(--blanco);
+}
+
+td:last-child {
+    text-align: center;
+}
+
+td:last-child a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+td:last-child img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+footer {
+    background-color: var(--rosa-apagado);
+    color: var(--blanco);
+    text-align: center;
+    align-content: center;
+    height: 50px;
+    font-size: x-small;
+}
+
+/* Estilos para pantallas con ancho máximo de 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    h1 {
+        width: 100%;
+        font-size: 24px;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #menu {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    #boton {
+        float: none;
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .decoracion {
+        width: 100%;
+        height: 40px;
+        margin: 10px auto;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Entradas de Mercancia</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span>Entradas de Mercancia</span>
+        </h1>
+        <div class="decoracion"></div>
+        <a href="/" id="menu"><img src="/img/menu.png" alt="Menu principal"></a>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <a href="/agregarEntrada" id="boton">Agregar producto</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Sku</th>
+                        <th>Fecha de entrega</th>
+                        <th>Proveedor</th>
+                        <th>Cantidad</th>
+                        <th>Precio de compra</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% if (entradas && entradas.length> 0) { %>
+                        <% entradas.forEach(p=> { %>
+                            <tr>
+                                <td>
+                                    <%= p.id_entrada %>
+                                </td>
+                                <td>
+                                    <%= p.sku %>
+                                </td>
+                                <td>
+                                    <%= p.fecha_entrada %>
+                                </td>
+                                <td>
+                                    <%= p.proveedor %>
+                                </td>
+                                <td>
+                                    <%= p.cantidad_recibida %>
+                                </td>
+                                <td>
+                                    $ <%= p.precio_compra %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="9">No hay productos para mostrar.</td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        @2025 ariadna-ge. Todos los derechos reservados
+    </footer>
+</body>
+
+</html>

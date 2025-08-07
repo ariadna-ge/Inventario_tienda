@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Inventario</title>
+</head>
+
+<body>
+    <nav class="menu-lateral">
+        <a href="/inventario" class="enlace-nav">Inventario general</a>
+        <a href="/entradas" class="enlace-nav">Entrada de mercancía</a>
+        <a href="/salidas" class="enlace-nav">Salida de mercancía</a>
+
+
+        <div class="info-fecha">
+            <p class="fecha-dia">
+                <%= currentDay %>
+            </p>
+            <p class="fecha-numero">
+                <%= currentDate %>
+            </p>
+        </div>
+    </nav>
+
+    <main>
+        <div class="tarjeta-contenedor">
+            <div class="tarjeta">
+                <img src="/img/categorias.png" alt="Icono Categorías">
+                <div class="texto-tarjeta">
+                    <h3>Categorías</h3>
+                    <p class="numero">
+                        <%= categorias %>
+                    </p>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <img src="/img/productos.png" alt="Icono Productos">
+                <div class="texto-tarjeta">
+                    <h3>Productos</h3>
+                    <p class="numero">
+                        <%= skuTotal %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="dashboard">
+            <div class="columna-tablas">
+                <div class="modulo-tabla">
+                    <h2>Productos más vendidos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sku</th>
+                                <th>Producto</th>
+                                <th>Total vendido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% topVentas.forEach(function(producto) { %>
+                                <tr>
+                                    <td>
+                                        <%= producto.sku %>
+                                    </td>
+                                    <td>
+                                        <%= producto.producto %>
+                                    </td>
+                                    <td>
+                                        <%= producto.total_vendido %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modulo-tabla">
+                    <h2>Artículos con bajo stock</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Producto</th>
+                                <th>Cantidad Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% stockBajo.forEach(function(producto) { %>
+                                <tr>
+                                    <td>
+                                        <%= producto.sku %>
+                                    </td>
+                                    <td>
+                                        <%= producto.producto %>
+                                    </td>
+                                    <td>
+                                        <%= producto.cantidad %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="columna-totales">
+
+                <div class="tarjeta-total">
+                    <h3>Valor Total del Inventario Actual</h3>
+                    <p>
+                        <%= totalInventario %>
+                    </p>
+                </div>
+
+                <div class="tarjeta-total">
+                    <h3>Ventas del mes</h3>
+                    <p>$ <%= ventas %>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
