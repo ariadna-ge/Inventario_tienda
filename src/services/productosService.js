@@ -1,6 +1,7 @@
 const db = require('../config/db');
+//FUNCIONES REUTILIZABLES
 
-// Función reutilizable que consulta los datos de las diversas tablas
+// Función que consulta los datos de las diversas tablas
 exports.getAllData = (tableName, callback) => {
     const selctDB = `SELECT * FROM ${tableName}`;
     db.query(selctDB, callback);

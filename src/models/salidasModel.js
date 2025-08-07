@@ -1,5 +1,7 @@
 const connection = require('../config/db');
 
+// consultas necesarias para mostrar informacion en la pagina de inicio 
+
 function getVentasMesActual(callback) {
     const sqlQuery = `SELECT SUM(precio_total) AS total_ventas_mes FROM salidas WHERE YEAR(fecha_salida) = YEAR(CURDATE()) AND MONTH(fecha_salida) = MONTH(CURDATE());`;
     connection.query(sqlQuery, (err, results) => {
