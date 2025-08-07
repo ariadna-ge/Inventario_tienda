@@ -42,7 +42,7 @@
                                     <%= p.sku %>
                                 </td>
                                 <td>
-                                    <%= p.fecha_salida %>
+                                    <%= new Date(p.fecha_salida).toISOString().split('T')[0] %>
                                 </td>
                                 <td>
                                     <%= p.pago %>
