@@ -15,10 +15,12 @@ Sistema de gestión de inventario. Permite controlar entradas, salidas y product
 
 ## 📲 Vistas
 ### Panel de control
-![Panel de control](readme\dashboard.png)
+![Panel de control](https://github.com/ariadna-ge/Inventario_tienda/blob/ed820e411f24f925b0163e08f6d260cc3ba9d786/readme/dashboard.png)
 ### Registro y visualizacion de datos
 El diseño es el mismo para los productos, entradas y salidas, solo cambian los datos que se solicitan.
-![Datos en tabla](readme\inventario.png)![Editar](readme\agregar.png)
+![Datos en tabla](https://github.com/ariadna-ge/Inventario_tienda/blob/ed820e411f24f925b0163e08f6d260cc3ba9d786/readme/inventario.png)
+![Editar](https://github.com/ariadna-ge/Inventario_tienda/blob/ed820e411f24f925b0163e08f6d260cc3ba9d786/readme/agregar.png
+)
 
 ## 🛠 Tecnologías Usadas
 
